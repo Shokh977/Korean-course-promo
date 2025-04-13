@@ -1,6 +1,16 @@
 import React from "react";
 
 function App() {
+  // Function to handle Telegram link click
+  const handleTelegramClick = () => {
+    // Check if fbq is available
+    if (window.fbq) {
+      window.fbq('track', 'Lead', {
+        content_name: 'Telegram Channel Click',
+        content_category: 'Korean Course',
+      });
+    }
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#032414] to-[#0d2f2f] text-white flex items-center justify-center p-6">
       <div className="max-w-xl text-center space-y-6">
@@ -19,6 +29,7 @@ function App() {
           href="https://t.me/shokhtv_me"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleTelegramClick}
           className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-2xl transition-all duration-300"
         >
           👉 Telegram Kanalga Qo‘shilish
